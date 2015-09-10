@@ -1,5 +1,5 @@
 function t() {
-  return 'Fully functional server';
+  return [200, 'Fully functional server'];
 }
 
 setRoute('/test', t);

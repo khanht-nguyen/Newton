@@ -1,9 +1,9 @@
 function index() {
-  return 'Fully functional server';
+  writeMessage("")
 }
 
 function test() {
-  return "in test()";
+  writeMessage("in test()")
 }
 
 setRoute('/', index);

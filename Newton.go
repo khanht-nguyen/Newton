@@ -11,12 +11,6 @@ import (
 
 var g_vm *otto.Otto
 
-func twoPlus(call otto.FunctionCall) (otto.Value) {
-  right, _ := call.Argument(0).ToInteger()
-  result, _ := g_vm.ToValue(2 + right)
-  return result
-}
-
 func main() {
 	flag.Parse()
 
@@ -35,8 +29,7 @@ func main() {
 
     vm.Set("setRoute", setRoute)
     vm.Set("startServer", startServer)
-    vm.Set("writeMessage", writeMessage)
-    
+
 		_, err = vm.Run(src)
 		return err
 	}()

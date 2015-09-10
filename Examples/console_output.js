@@ -1,6 +1,11 @@
-function t() {
-  return [200, 'Fully functional server'];
+function index() {
+  return 'Fully functional server';
 }
 
-setRoute('/test', t);
+function test() {
+  return "in test()";
+}
+
+setRoute('/', index);
+setRoute('/test', test);
 startServer(':8080');

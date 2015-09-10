@@ -28,21 +28,6 @@ func (ro Route) route(w http.ResponseWriter, r *http.Request) {
   }
 }
 
-func writeMessage(call otto.FunctionCall) otto.Value {
-  obj, e := call.Argument(0).Export()
-  r, e := call.Argument(1).ToString()
-
-  if e != nil {
-      log.Fatal("writeMessage failed!")
-    } else {
-      f_obj := obj.(http.ResponseWriter)
-
-      io.WriteString(f_obj, r)
-    }
-
-    return otto.Value{}
-}
-
 func startServer(call otto.FunctionCall) otto.Value {
   r, e := call.Argument(0).ToString()
 

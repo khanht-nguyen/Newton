@@ -27,6 +27,7 @@ func main() {
 		vm := otto.New()
     g_vm = vm
 
+    vm.Set("serveFiles", serveFiles)
     vm.Set("setRoute", setRoute)
     vm.Set("startServer", startServer)
 
